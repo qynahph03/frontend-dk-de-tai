@@ -4,7 +4,7 @@ import { useAuth } from "../../context/AuthContext";
 import { getCouncilList } from "../../services/councilService";
 import { getNotifications, markAllNotificationsAsRead } from "../../services/notificationService";
 import { toast } from "react-toastify";
-import "../../assets/css/uniadmin/dashboard.css"; // Tái sử dụng CSS của admin
+import "../../assets/css/Uniadmin/dashboard.css"; // Tái sử dụng CSS của admin
 
 const UniadminDashboard = () => {
   const { user } = useAuth();
