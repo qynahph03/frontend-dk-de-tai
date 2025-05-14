@@ -1,0 +1,94 @@
+/* Định dạng tổng thể */
+.approve-reject-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-height: 80vh;
+    height: auto;
+    overflow: visible;
+    min-width: 700px;
+  }
+  
+  .approve-reject-container h2 {
+    text-align: center;
+    color: #fff;
+  }
+  
+  .approve-reject-container .title {
+    text-align: center;
+    color: #000;
+  }
+  
+  /* Danh sách đề tài */
+  .topic-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .topic-item {
+    background: #ffffff;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Thông tin đề tài */
+  .topic-item strong {
+    font-size: 18px;
+    color: #222;
+  }
+  
+  .topic-item span {
+    display: block;
+    margin-top: 5px;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  /* Trạng thái đề tài */
+  .status {
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .status.pending {
+    color: orange;
+  }
+  
+  .status.approved {
+    color: green;
+  }
+  
+  .status.rejected {
+    color: red;
+  }
+  
+  /* Nút bấm */
+  .approve-reject-container button {
+    padding: 8px 12px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .approve-reject-container button:hover {
+    opacity: 0.8;
+  }
+  
+  .approve-reject-container button:first-of-type {
+    background: #28a745;
+    color: white;
+  }
+  
+  .approve-reject-container button:last-of-type {
+    background: #dc3545;
+    color: white;
+  }
+  

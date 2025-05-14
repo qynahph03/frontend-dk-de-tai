@@ -1,0 +1,22 @@
+.notifications-content{
+    flex: 1;
+    padding: 30px;
+    border-radius: 8px;
+    background-color: #f0f2f5;
+    min-width: 700px;
+    overflow-y: auto;
+    max-height: 100vh;
+    transition: margin-left 0.3s ease;
+    /* Ẩn scrollbar mặc định */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+}
+
+.notifications-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.notifications-content::-webkit-scrollbar {
+    display: none;
+  }

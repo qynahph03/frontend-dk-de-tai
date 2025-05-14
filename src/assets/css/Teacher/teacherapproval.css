@@ -1,0 +1,52 @@
+.teacher-approval-container {
+    display: flex;
+}
+
+.teacher-approval-content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: white;
+    height: 93.5vh;
+    min-width: 700px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+.approve-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 5px 10px;
+    margin-right: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.reject-btn {
+    background-color: #dc3545;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.approve-btn:hover {
+    background-color: #218838;
+}
+
+.reject-btn:hover {
+    background-color: #c82333;
+}

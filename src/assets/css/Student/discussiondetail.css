@@ -1,0 +1,170 @@
+/* Container chính của tab chi tiết */
+.stu-discussion-detail {
+    padding: 10px;
+    background-color: #f0f2f5;
+    border-radius: 8px;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Header chứa nút "Quay lại" và tiêu đề đề tài */
+  .stu-header {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  /* Nút "Quay lại" */
+  .stu-back-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+
+  
+  /* Tiêu đề đề tài */
+  .stu-discussion-detail h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+    flex: 1;
+  }
+  
+  /* Khu vực chứa danh sách tin nhắn */
+  .stu-messages-container {
+    flex: 1;
+    overflow-y: auto;
+    padding: 15px 5px;
+    background-color: #f0f2f5;
+  }
+  
+  /* Một tin nhắn (bao gồm icon thùng rác và nội dung) */
+  .stu-message-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  
+  /* Tin nhắn của bản thân */
+  .stu-own-message {
+    justify-content: flex-end;
+  }
+  
+  /* Tin nhắn của người khác */
+  .stu-other-message {
+    justify-content: flex-start;
+  }
+  
+  /* Nội dung bong bóng tin nhắn */
+  .stu-message-content {
+    padding: 8px 12px;
+    border-radius: 10px;
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    color: #333;
+    position: relative;
+    max-width: 70%;
+  }
+  
+  /* Bong bóng tin nhắn của bản thân */
+  .stu-own-message .stu-message-content {
+    background-color: #e1f0fa;
+    border: none;
+    color: #333;
+  }
+  
+  /* Tên người gửi */
+  .stu-message-content strong {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 3px;
+    color: #555;
+  }
+  
+  /* Nội dung tin nhắn */
+  .stu-message-content p {
+    margin: 0;
+    word-wrap: break-word;
+    font-size: 14px;
+  }
+  
+  /* Thời gian tin nhắn */
+  .stu-message-content small {
+    display: block;
+    margin-top: 3px;
+    font-size: 11px;
+    color: #888;
+    text-align: right;
+  }
+  
+  /* Thời gian tin nhắn của bản thân */
+  .stu-own-message small {
+    text-align: right;
+  }
+  
+  /* Icon thùng rác */
+  .stu-delete-icon {
+    display: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #ff4d4f;
+    margin-right: 8px;
+  }
+  
+  /* Hiển thị icon thùng rác khi hover */
+  .stu-own-message:hover .stu-delete-icon {
+    display: inline;
+  }
+  
+  /* Đảm bảo thứ tự icon và bong bóng */
+  .stu-own-message .stu-message-item {
+    flex-direction: row;
+  }
+  
+  /* Khu vực nhập tin nhắn */
+  .stu-input-area {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: 1px solid #e0e0e0;
+    gap: 8px;
+  }
+  
+  /* Ô nhập tin nhắn */
+  .stu-input-area input {
+    flex: 1;
+    padding: 5px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+  }
+  
+  /* Placeholder của ô nhập */
+  .stu-input-area input::placeholder {
+    color: #999;
+  }
+  
+  /* Nút "Gửi" */
+  .stu-input-area .stu-send-btn {
+    padding: 5px 15px;
+    background-color: #0084ff;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-size: 14px;
+  }
+  
+  /* Hiệu ứng hover cho nút "Gửi" */
+  .stu-input-area .stu-send-btn:hover {
+    background-color: #006dcc;
+  }

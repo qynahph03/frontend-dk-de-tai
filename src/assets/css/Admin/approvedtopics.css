@@ -1,0 +1,32 @@
+.approved-topics-content {
+    flex: 1;
+    padding: 30px;
+    background-color: #f0f2f5;
+    overflow-y: auto;
+    max-height: 100vh;
+    min-width: 700px;
+    max-width: 850px;
+    border-radius: 7px;
+    /* Ẩn scrollbar mặc định */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+}
+
+.approved-topics-container {
+    display: flex;
+    height: auto;
+}
+
+/* Ẩn scrollbar trên Chrome, Safari, Edge */
+.approved-topics-content::-webkit-scrollbar {
+    display: none;
+  }
+  
+/* Hiển thị scrollbar khi hover */
+.approved-topics-content:hover {
+    scrollbar-width: thin; /* Firefox */
+    -ms-overflow-style: auto; /* IE/Edge */
+}
+
+
+  

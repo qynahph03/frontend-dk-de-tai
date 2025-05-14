@@ -1,0 +1,359 @@
+/* Uniadmin Dashboard Styles */
+#uniadmin-dashboard .admin-dashboard-container {
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  /* Phần nội dung chính bên phải sidebar */
+  #uniadmin-dashboard .admin-dashboard-content {
+    flex: 1;
+    padding: 30px;
+    border-radius: 8px;
+    background-color: #f0f2f5;
+    min-width: 700px;
+    overflow-y: auto;
+    max-height: 100vh;
+    transition: margin-left 0.3s ease;
+    /* Ẩn scrollbar mặc định */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+  }
+  
+  /* Ẩn scrollbar trên Chrome, Safari, Edge */
+  #uniadmin-dashboard .admin-dashboard-content::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hiển thị scrollbar khi hover */
+  #uniadmin-dashboard .admin-dashboard-content:hover {
+    scrollbar-width: thin; /* Firefox */
+    -ms-overflow-style: auto; /* IE/Edge */
+  }
+  
+  #uniadmin-dashboard .admin-dashboard-content:hover::-webkit-scrollbar {
+    display: block;
+    width: 8px;
+  }
+  
+  #uniadmin-dashboard .admin-dashboard-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+  }
+  
+  #uniadmin-dashboard .admin-dashboard-content::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+  }
+  
+  #uniadmin-dashboard .admin-dashboard-content::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  
+  /* Điều chỉnh margin khi sidebar thu gọn */
+  #uniadmin-dashboard .admin-dashboard-content.collapsed {
+    margin-left: 60px; /* Collapsed sidebar width (Sidebar.jsx) */
+  }
+  
+  /* Tiêu đề "Dashboard Quản trị cấp cao" */
+  #uniadmin-dashboard .admin-dashboard-content h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #1a3c61; /* Uniadmin primary color */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  /* Tổng quan */
+  #uniadmin-dashboard .admin-overview-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+  
+  #uniadmin-dashboard .admin-overview-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.2s ease;
+  }
+  
+  #uniadmin-dashboard .admin-overview-card:hover {
+    transform: translateY(-2px);
+  }
+  
+  #uniadmin-dashboard .admin-overview-card h4 {
+    margin: 0 0 10px;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  #uniadmin-dashboard .admin-overview-card p {
+    margin: 0;
+    font-size: 24px;
+    color: #1a3c61;
+  }
+  
+  /* Thông báo */
+  #uniadmin-dashboard .admin-notifications-section {
+    margin-bottom: 30px;
+  }
+  
+  #uniadmin-dashboard .admin-notifications-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  #uniadmin-dashboard .admin-notifications-section h3 {
+    font-size: 18px;
+    color: #1a3c61;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  #uniadmin-dashboard .admin-mark-read-btn {
+    padding: 5px 15px;
+    background-color: #1a3c61;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-size: 14px;
+  }
+  
+  #uniadmin-dashboard .admin-mark-read-btn:hover {
+    background-color: #153048; /* Darker shade for hover */
+  }
+  
+  #uniadmin-dashboard .admin-notification-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  #uniadmin-dashboard .admin-notification-card {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  #uniadmin-dashboard .admin-notification-card.unread {
+    background-color: #e6f0ff; /* Light blue for unread */
+  }
+  
+  #uniadmin-dashboard .admin-notification-card.read {
+    background-color: white;
+  }
+  
+  #uniadmin-dashboard .admin-notification-card p {
+    margin: 0 0 5px;
+    color: #333;
+    font-size: 14px;
+  }
+  
+  #uniadmin-dashboard .admin-notification-card small {
+    color: #999;
+    font-size: 12px;
+  }
+  
+  /* Hội đồng gần đây */
+  #uniadmin-dashboard .admin-topics-section {
+    margin-bottom: 30px;
+  }
+  
+  #uniadmin-dashboard .admin-topics-section h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #1a3c61;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  #uniadmin-dashboard .admin-topic-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  #uniadmin-dashboard .admin-topic-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.2s, transform 0.2s;
+    cursor: pointer;
+  }
+  
+  #uniadmin-dashboard .admin-topic-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+  }
+  
+  #uniadmin-dashboard .admin-topic-card h4 {
+    margin: 0 0 10px;
+    font-size: 16px;
+    color: #1a3c61;
+  }
+  
+  #uniadmin-dashboard .admin-topic-card p {
+    margin: 0 0 5px;
+    color: #666;
+    font-size: 14px;
+  }
+  
+  /* Responsive Design */
+  
+  /* Màn hình nhỏ hơn 768px (tablet) */
+  @media (max-width: 768px) {
+    #uniadmin-dashboard .admin-dashboard-container {
+      flex-direction: column;
+    }
+  
+    #uniadmin-dashboard .admin-dashboard-content {
+      padding: 20px;
+      margin-left: 60px; /* Collapsed sidebar */
+    }
+  
+    #uniadmin-dashboard .admin-dashboard-content.collapsed {
+      margin-left: 60px;
+    }
+  
+    #uniadmin-dashboard .admin-dashboard-content h2 {
+      font-size: 20px;
+    }
+  
+    #uniadmin-dashboard .admin-overview-section {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+    }
+  
+    #uniadmin-dashboard .admin-overview-card {
+      padding: 15px;
+    }
+  
+    #uniadmin-dashboard .admin-overview-card h4 {
+      font-size: 14px;
+    }
+  
+    #uniadmin-dashboard .admin-overview-card p {
+      font-size: 20px;
+    }
+  
+    #uniadmin-dashboard .admin-topic-cards {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 15px;
+    }
+  
+    #uniadmin-dashboard .admin-topic-card {
+      padding: 15px;
+    }
+  
+    #uniadmin-dashboard .admin-topic-card h4 {
+      font-size: 14px;
+    }
+  
+    #uniadmin-dashboard .admin-topic-card p {
+      font-size: 12px;
+    }
+  
+    #uniadmin-dashboard .admin-notifications-section h3 {
+      font-size: 16px;
+    }
+  
+    #uniadmin-dashboard .admin-mark-read-btn {
+      font-size: 12px;
+      padding: 4px 12px;
+    }
+  
+    #uniadmin-dashboard .admin-notification-card {
+      padding: 12px;
+    }
+  
+    #uniadmin-dashboard .admin-notification-card p {
+      font-size: 12px;
+    }
+  
+    #uniadmin-dashboard .admin-notification-card small {
+      font-size: 10px;
+    }
+  }
+  
+  /* Màn hình nhỏ hơn 576px (mobile) */
+  @media (max-width: 576px) {
+    #uniadmin-dashboard .admin-dashboard-content {
+      padding: 15px;
+      margin-left: 0; /* No sidebar on mobile */
+    }
+  
+    #uniadmin-dashboard .admin-dashboard-content.collapsed {
+      margin-left: 0;
+    }
+  
+    #uniadmin-dashboard .admin-dashboard-content h2 {
+      font-size: 18px;
+    }
+  
+    #uniadmin-dashboard .admin-overview-section {
+      grid-template-columns: 1fr; /* Hiển thị 1 cột trên mobile */
+      gap: 10px;
+    }
+  
+    #uniadmin-dashboard .admin-overview-card {
+      padding: 10px;
+    }
+  
+    #uniadmin-dashboard .admin-overview-card h4 {
+      font-size: 12px;
+    }
+  
+    #uniadmin-dashboard .admin-overview-card p {
+      font-size: 18px;
+    }
+  
+    #uniadmin-dashboard .admin-topic-cards {
+      grid-template-columns: 1fr; /* Hiển thị 1 cột trên mobile */
+      gap: 10px;
+    }
+  
+    #uniadmin-dashboard .admin-topic-card {
+      padding: 10px;
+    }
+  
+    #uniadmin-dashboard .admin-topic-card h4 {
+      font-size: 12px;
+    }
+  
+    #uniadmin-dashboard .admin-topic-card p {
+      font-size: 10px;
+    }
+  
+    #uniadmin-dashboard .admin-notifications-section h3 {
+      font-size: 14px;
+    }
+  
+    #uniadmin-dashboard .admin-mark-read-btn {
+      font-size: 10px;
+      padding: 3px 10px;
+    }
+  
+    #uniadmin-dashboard .admin-notification-card {
+      padding: 10px;
+    }
+  
+    #uniadmin-dashboard .admin-notification-card p {
+      font-size: 10px;
+    }
+  
+    #uniadmin-dashboard .admin-notification-card small {
+      font-size: 8px;
+    }
+  }

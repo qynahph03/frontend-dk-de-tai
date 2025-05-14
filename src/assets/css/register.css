@@ -1,0 +1,113 @@
+/* src/assets/css/register.css */
+
+/* Đảm bảo body và html chiếm toàn bộ chiều cao màn hình */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Hiệu ứng mờ nền */
+.register-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(8px); /* Làm mờ nền */
+}
+
+/* Hộp register */
+.register-form {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  width: 350px;
+  text-align: center;
+}
+
+/* Tiêu đề */
+.register-form h2 {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 24px;
+}
+
+/* Ô nhập liệu */
+.register-form .form-group {
+  margin-bottom: 15px;
+}
+
+.register-form .form-group input {
+  width: 92%;
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  font-size: 16px;
+}
+
+/* Hiệu ứng khi focus vào input */
+.register-form .form-group input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.4);
+  outline: none;
+}
+
+/* Nút đăng nhập */
+.register-form button {
+  width: 100%;
+  padding: 12px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+/* Hiệu ứng hover cho nút */
+.register-form button:hover {
+  background: #0056b3;
+}
+
+/* Liên kết đăng ký */
+.register-form p {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.register-form p a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.register-form p a:hover {
+  text-decoration: underline;
+}
+
+.opt {
+  font-size: 13px;
+}
+
+select {
+  width: 100%;  /* Hoặc giá trị cụ thể, ví dụ: 300px */
+  height: 40px; /* Điều chỉnh chiều cao */
+  padding: 5px; /* Thêm khoảng đệm cho đẹp */
+  border: 1px solid #ccc;
+  border-radius: 5px; /* Bo góc nhẹ */
+  font-size: 15px;
+}
+
+.form-group .btn1 {
+  width: 30%;
+  margin-top: 20px;
+}

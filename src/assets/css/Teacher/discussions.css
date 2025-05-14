@@ -1,0 +1,236 @@
+/* Container chính bao gồm sidebar và nội dung */
+.tea-discussions-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Phần nội dung chính bên phải sidebar */
+.tea-discussions-content {
+  flex: 1;
+  padding: 30px;
+  background-color: #f0f2f5;
+  min-width: 700px;
+}
+
+/* Tiêu đề "Diễn đàn hướng dẫn" */
+.tea-discussions-content h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Container chứa danh sách thẻ thảo luận */
+.tea-discussion-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* Thẻ thảo luận (card) */
+.tea-discussion-card {
+  border: none;
+  border-radius: 8px;
+  padding: 20px;
+  cursor: pointer;
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+/* Hiệu ứng hover cho thẻ */
+.tea-discussion-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Tiêu đề đề tài trong thẻ */
+.tea-discussion-card h4 {
+  margin: 0 0 10px;
+  font-size: 18px;
+  color: #333;
+}
+
+/* Tin nhắn mới nhất trong thẻ */
+.tea-discussion-card p {
+  margin: 0 0 5px;
+  color: #666;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Thời gian tin nhắn mới nhất trong thẻ */
+.tea-discussion-card small {
+  color: #999;
+  font-size: 12px;
+}
+
+/* Container chính của tab chi tiết */
+.tea-discussion-detail {
+  padding: 10px;
+  background-color: #f0f2f5;
+  border-radius: 8px;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header chứa nút "Quay lại" và tiêu đề đề tài */
+.tea-header {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* Nút "Quay lại" */
+.tea-back-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+/* Tiêu đề đề tài */
+.tea-discussion-detail h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+  flex: 1;
+}
+
+/* Khu vực chứa danh sách tin nhắn */
+.tea-messages-container {
+  flex: 1;
+  overflow-y: auto;
+  padding: 15px 5px;
+  background-color: #f0f2f5;
+}
+
+/* Một tin nhắn (bao gồm icon thùng rác và nội dung) */
+.tea-message-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+/* Tin nhắn của bản thân */
+.tea-own-message {
+  justify-content: flex-end;
+}
+
+/* Tin nhắn của người khác */
+.tea-other-message {
+  justify-content: flex-start;
+}
+
+/* Nội dung bong bóng tin nhắn */
+.tea-message-content {
+  padding: 8px 12px;
+  border-radius: 10px;
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  color: #333;
+  position: relative;
+  max-width: 70%;
+}
+
+/* Bong bóng tin nhắn của bản thân */
+.tea-own-message .tea-message-content {
+  background-color: #e1f0fa;
+  border: none;
+  color: #333;
+}
+
+/* Tên người gửi */
+.tea-message-content strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 3px;
+  color: #555;
+}
+
+/* Nội dung tin nhắn */
+.tea-message-content p {
+  margin: 0;
+  word-wrap: break-word;
+  font-size: 14px;
+}
+
+/* Thời gian tin nhắn */
+.tea-message-content small {
+  display: block;
+  margin-top: 3px;
+  font-size: 11px;
+  color: #888;
+  text-align: right;
+}
+
+/* Thời gian tin nhắn của bản thân */
+.tea-own-message small {
+  text-align: right;
+}
+
+/* Icon thùng rác */
+.tea-delete-icon {
+  display: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #ff4d4f;
+  margin-right: 8px;
+}
+
+/* Hiển thị icon thùng rác khi hover */
+.tea-own-message:hover .tea-delete-icon {
+  display: inline;
+}
+
+/* Đảm bảo thứ tự icon và bong bóng */
+.tea-own-message .tea-message-item {
+  flex-direction: row;
+}
+
+/* Khu vực nhập tin nhắn */
+.tea-input-area {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 8px 12px;
+  border-radius: 20px;
+  border: 1px solid #e0e0e0;
+  gap: 8px;
+}
+
+/* Ô nhập tin nhắn */
+.tea-input-area input {
+  flex: 1;
+  padding: 5px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+/* Placeholder của ô nhập */
+.tea-input-area input::placeholder {
+  color: #999;
+}
+
+/* Nút "Gửi" */
+.tea-input-area .tea-send-btn {
+  padding: 5px 15px;
+  background-color: #0084ff;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-size: 14px;
+}
+
+/* Hiệu ứng hover cho nút "Gửi" */
+.tea-input-area .tea-send-btn:hover {
+  background-color: #006dcc;
+}

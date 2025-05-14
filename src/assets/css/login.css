@@ -1,0 +1,95 @@
+/* src/assets/css/login.css */
+
+/* Đảm bảo body và html chiếm toàn bộ chiều cao màn hình */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Hiệu ứng mờ nền */
+.login-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(8px); /* Làm mờ nền */
+}
+
+/* Hộp login */
+.login-form {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  width: 350px;
+  text-align: center;
+}
+
+/* Tiêu đề */
+.login-form h2 {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 24px;
+}
+
+/* Ô nhập liệu */
+.login-form .form-group {
+  margin-bottom: 15px;
+}
+
+.login-form .form-group input {
+  width: 92%;
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  font-size: 16px;
+}
+
+/* Hiệu ứng khi focus vào input */
+.login-form .form-group input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.4);
+  outline: none;
+}
+
+/* Nút đăng nhập */
+.login-form button {
+  width: 100%;
+  padding: 12px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+/* Hiệu ứng hover cho nút */
+.login-form button:hover {
+  background: #0056b3;
+}
+
+/* Liên kết đăng ký */
+.login-form p {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.login-form p a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.login-form p a:hover {
+  text-decoration: underline;
+}

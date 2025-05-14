@@ -1,0 +1,111 @@
+/*src/assets/css/Student/report.css*/
+
+.dashboard-container {
+  display: flex;
+  align-items: flex-start;
+}
+
+.dashboard-content {
+  flex: 1;
+  padding: 20px;
+  height: auto;
+  flex: 1 1 auto;
+  overflow: visible;
+}
+
+.report-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin-bottom: 20px;
+}
+
+.report-form input[type="text"],
+.report-form textarea,
+.report-form input[type="file"] {
+  width: 97%;
+  margin: 10px 0;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.report-form textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+.report-form button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 5px auto;
+  transition: background-color 0.5s ease;
+}
+
+.report-form button:hover {
+  background-color: #0056b3;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #f4f4f4;
+}
+
+td a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+td a:hover {
+  text-decoration: underline;
+}
+
+button {
+  margin-right: 5px;
+}
+
+/* Ẩn margin-line inline style, gom vào CSS */
+.ShowDeleted {
+display: inline-block;
+margin: 0;
+padding: 8px 16px;
+background: linear-gradient(
+  to right,
+  #723bbb,  /* màu đầu */
+  #296ff9   /* màu cuối */
+);     /* màu nền chính */
+color: #fff;                    /* chữ trắng */
+border: none;                   /* bỏ viền mặc định */
+border-radius: 4px;             /* bo góc */
+font-size: 14px;
+font-weight: 500;
+cursor: pointer;
+transition: background-color 0.3s ease;
+text-align: center;
+text-decoration: none;          /* nếu dùng <a> */
+background-size: 200% 200%;
+transition: background-position 0.3s ease-in-out;
+
+}
+
+.ShowDeleted:hover {
+background-position: right center;     /* màu tối hơn khi hover */
+}
+
+

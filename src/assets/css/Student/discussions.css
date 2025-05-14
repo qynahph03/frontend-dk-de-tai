@@ -1,0 +1,116 @@
+/* Container chính bao gồm sidebar và nội dung */
+.stu-discussions-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Phần nội dung chính bên phải sidebar */
+.stu-discussions-content {
+  flex: 1;
+  padding: 30px;
+  background-color: #f0f2f5;
+  min-width: 700px;
+}
+
+/* Tiêu đề "Diễn đàn nhóm" */
+.stu-discussions-content h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Khu vực tạo thảo luận mới (dropdown và nút) */
+.stu-create-discussion {
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background-color: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Dropdown chọn đề tài */
+.stu-create-discussion select {
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  width: 250px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+/* Hiệu ứng focus cho dropdown */
+.stu-create-discussion select:focus {
+  border-color: #0084ff;
+}
+
+/* Nút "Tạo thảo luận mới" */
+.stu-create-discussion button {
+  padding: 10px 20px;
+  background-color: #0084ff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin: 0;
+}
+
+/* Hiệu ứng hover cho nút */
+.stu-create-discussion button:hover {
+  background-color: #006dcc;
+}
+
+/* Trạng thái disabled của nút */
+.stu-create-discussion button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Container chứa danh sách thẻ thảo luận */
+.stu-discussion-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* Thẻ thảo luận (card) */
+.stu-discussion-card {
+  border: none;
+  border-radius: 8px;
+  padding: 20px;
+  cursor: pointer;
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+/* Hiệu ứng hover cho thẻ */
+.stu-discussion-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Tiêu đề đề tài trong thẻ */
+.stu-discussion-card h4 {
+  margin: 0 0 10px;
+  font-size: 18px;
+  color: #333;
+}
+
+/* Tin nhắn mới nhất trong thẻ */
+.stu-discussion-card p {
+  margin: 0 0 5px;
+  color: #666;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Thời gian tin nhắn mới nhất trong thẻ */
+.stu-discussion-card small {
+  color: #999;
+  font-size: 12px;
+}

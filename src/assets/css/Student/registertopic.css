@@ -1,0 +1,74 @@
+/* Định dạng chung cho container */
+.register-topic-container {
+  margin: 40px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  min-width: 600px;
+}
+
+/* Tiêu đề chính */
+.register-topic-container h2 {
+  text-align: center;
+  color: #fff;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.register-topic-container .title {
+  text-align: center;
+  color: #000;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Định dạng cho label */
+.register-topic-container label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+/* Định dạng cho input và textarea */
+.register-topic-container input,
+.register-topic-container textarea {
+  width: 95%;
+  padding: 10px;
+  margin: 5px 2px 15px 4px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Định dạng nút gửi */
+.register-topic-container button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-top-right-radius : 5px !important; 
+  border-bottom-right-radius : 5px !important;
+  font-size: 18px;
+  cursor: pointer;
+  transition: left 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.register-topic-container button:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
+.register-topic-container button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+/* Định dạng thông báo lỗi */
+.error-message {
+  color: red;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 15px;
+}
