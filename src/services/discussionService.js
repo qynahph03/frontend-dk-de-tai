@@ -1,8 +1,7 @@
-const API_URL = "http://localhost:5000/api";
 
 // 📋 Lấy danh sách thảo luận
 export const fetchDiscussions = async (token, page = 1, limit = 10) => {
-  const response = await fetch(`${API_URL}/discussion/messages?page=${page}&limit=${limit}`, {
+  const response = await fetch(`${import.meta.env.VITE_API_URL}/discussion/messages?page=${page}&limit=${limit}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -20,7 +19,7 @@ export const fetchDiscussions = async (token, page = 1, limit = 10) => {
 
 // 📋 Lấy chi tiết một cuộc thảo luận
 export const fetchDiscussionById = async (token, discussionId) => {
-  const response = await fetch(`${API_URL}/discussion/messages?page=1&limit=100`, {
+  const response = await fetch(`${import.meta.env.VITE_API_URL}/discussion/messages?page=1&limit=100`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -43,7 +42,7 @@ export const fetchDiscussionById = async (token, discussionId) => {
 
 // ✉️ Gửi tin nhắn mới
 export const sendMessage = async (token, discussionId, message) => {
-  const response = await fetch(`${API_URL}/discussion/message`, {
+  const response = await fetch(`${import.meta.env.VITE_API_URL}/discussion/message`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -62,7 +61,7 @@ export const sendMessage = async (token, discussionId, message) => {
 
 // 📝 Tạo cuộc thảo luận mới
 export const startDiscussion = async (token, topicId) => {
-  const response = await fetch(`${API_URL}/discussion/start`, {
+  const response = await fetch(`${import.meta.env.VITE_API_URL}/discussion/start`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -81,7 +80,7 @@ export const startDiscussion = async (token, topicId) => {
 
 // 🗑️ Xóa tin nhắn
 export const deleteMessage = async (token, discussionId, messageId) => {
-  const response = await fetch(`${API_URL}/discussion/message`, {
+  const response = await fetch(`${import.meta.env.VITE_API_URL}/discussion/message`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",

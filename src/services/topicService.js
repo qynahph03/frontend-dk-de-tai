@@ -1,11 +1,10 @@
 // / frontend/src/services/topicService.js
 
-const API_URL = "http://localhost:5000/api";
 
 // Thêm API lấy danh sách đề tài (khôi phục từ lịch sử)
 export const getTopicsForUser = async (token) => {
   console.log("Gửi yêu cầu API với token:", token);
-  const response = await fetch(`${API_URL}/topic/list`, {
+  const response = await fetch(`${import.meta.env.VITE_API_URL}/topic/list`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -22,7 +21,7 @@ export const getTopicsForUser = async (token) => {
 
 // 📋 Lấy danh sách đề tài của người dùng (đã lọc status: "approved")
 export const fetchTopics = async (token) => {
-  const response = await fetch(`${API_URL}/topic/list`, {
+  const response = await fetch(`${import.meta.env.VITE_API_URL}/topic/list`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -72,7 +71,7 @@ export const fetchDashboardOverview = async (token) => {
 
 // API sinh viên gửi yêu cầu hủy đề tài
 export const cancelTopicRequest = async (topicId, token) => {
-  const response = await fetch(`${API_URL}/topic/student-cancel`, {
+  const response = await fetch(`${import.meta.env.VITE_API_URL}/topic/student-cancel`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -94,7 +93,7 @@ export const getAllTopics = async (token) => {
   if (!token) {
     throw new Error("Token không hợp lệ hoặc thiếu.");
   }
-  const response = await fetch(`${API_URL}/topic/list`, {
+  const response = await fetch(`${import.meta.env.VITE_API_URL}/topic/list`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -111,7 +110,7 @@ export const getAllTopics = async (token) => {
 
 // Giảng viên phê duyệt đề tài
 export const approveTopic = async (topicId, token) => {
-  const response = await fetch(`${API_URL}/topic/teacher-approve`, {
+  const response = await fetch(`${import.meta.env.VITE_API_URL}/topic/teacher-approve`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -129,7 +128,7 @@ export const approveTopic = async (topicId, token) => {
 
 // Giảng viên từ chối đề tài
 export const rejectTopic = async (topicId, token) => {
-  const response = await fetch(`${API_URL}/topic/teacher-reject`, {
+  const response = await fetch(`${import.meta.env.VITE_API_URL}/topic/teacher-reject`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -147,7 +146,7 @@ export const rejectTopic = async (topicId, token) => {
 
 // Admin phê duyệt đề tài
 export const adminApproveTopic = async (topicId, token) => {
-  const response = await fetch(`${API_URL}/topic/approve`, {
+  const response = await fetch(`${import.meta.env.VITE_API_URL}/topic/approve`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -166,7 +165,7 @@ export const adminApproveTopic = async (topicId, token) => {
 
 // Admin từ chối đề tài
 export const adminRejectTopic = async (topicId, token) => {
-  const response = await fetch(`${API_URL}/topic/reject`, {
+  const response = await fetch(`${import.meta.env.VITE_API_URL}/topic/reject`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -185,7 +184,7 @@ export const adminRejectTopic = async (topicId, token) => {
 
   // Admin phê duyệt yêu cầu dừng đề tài
   export const approveStopTopic = async (token, topicId) => {
-    const response = await fetch(`${API_URL}/topic/approve-stop`, {
+    const response = await fetch(`${import.meta.env.VITE_API_URL}/topic/approve-stop`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

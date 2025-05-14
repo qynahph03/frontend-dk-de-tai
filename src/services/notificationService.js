@@ -1,10 +1,9 @@
 //frontend/src/services/notificationService.js
 
-const API_URL = "http://localhost:5000/api";
 
 // 📨 Lấy danh sách thông báo
 export const getNotifications = async (token) => {
-  const response = await fetch(`${API_URL}/notification/list`, {
+  const response = await fetch(`${import.meta.env.VITE_API_URL}/notification/list`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -22,7 +21,7 @@ export const getNotifications = async (token) => {
 
 // 📨 Lấy danh sách thông báo liên quan đến hội đồng
 export const getCouncilNotifications = async (token) => {
-  const response = await fetch(`${API_URL}/notification/list?type=council`, {
+  const response = await fetch(`${import.meta.env.VITE_API_URL}/notification/list?type=council`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -40,7 +39,7 @@ export const getCouncilNotifications = async (token) => {
 
 // ✅ Đánh dấu tất cả thông báo đã đọc
 export const markAllNotificationsAsRead = async (token) => {
-  const response = await fetch(`${API_URL}/notification/mark-as-read`, {
+  const response = await fetch(`${import.meta.env.VITE_API_URL}/notification/mark-as-read`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

@@ -1,10 +1,9 @@
 //frontend/src/services/councilService.js
 
-const API_URL = "http://localhost:5000/api";
 
 // 📋 Lấy danh sách hội đồng
 export const getCouncilList = async (token) => {
-  const response = await fetch(`${API_URL}/council/list`, {
+  const response = await fetch(`${import.meta.env.VITE_API_URL}/council/list`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -23,8 +22,8 @@ export const getCouncilList = async (token) => {
 // 📋 Lấy thông tin hội đồng của một đề tài
 export const getCouncilInfo = async (token, topicId = null) => {
   const url = topicId
-    ? `${API_URL}/council/list?topicId=${encodeURIComponent(topicId)}`
-    : `${API_URL}/council/list`;
+    ? `${import.meta.env.VITE_API_URL}/council/list?topicId=${encodeURIComponent(topicId)}`
+    : `${import.meta.env.VITE_API_URL}/council/list`;
   const response = await fetch(url, {
     method: "GET",
     headers: {
@@ -51,7 +50,7 @@ export const getCouncilInfo = async (token, topicId = null) => {
 
 // 👨‍🏫 Lấy danh sách giảng viên
 export const getTeachers = async (token) => {
-  const response = await fetch(`${API_URL}/user/teachers`, {
+  const response = await fetch(`${import.meta.env.VITE_API_URL}/user/teachers`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -69,7 +68,7 @@ export const getTeachers = async (token) => {
 
 // 🏛️ Gửi yêu cầu tạo hội đồng
 export const createCouncil = async (token, topicId, chairmanId, secretaryId, memberIds) => {
-  const response = await fetch(`${API_URL}/council/request-create`, {
+  const response = await fetch(`${import.meta.env.VITE_API_URL}/council/request-create`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -88,7 +87,7 @@ export const createCouncil = async (token, topicId, chairmanId, secretaryId, mem
 
 // ✏️ Cập nhật yêu cầu tạo hội đồng
 export const updateCouncil = async (token, councilId, chairmanId, secretaryId, memberIds) => {
-  const response = await fetch(`${API_URL}/council/update`, {
+  const response = await fetch(`${import.meta.env.VITE_API_URL}/council/update`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -107,7 +106,7 @@ export const updateCouncil = async (token, councilId, chairmanId, secretaryId, m
 
 // 🗑️ Xóa yêu cầu tạo hội đồng
 export const deleteCouncil = async (token, councilId) => {
-  const response = await fetch(`${API_URL}/council/delete`, {
+  const response = await fetch(`${import.meta.env.VITE_API_URL}/council/delete`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
@@ -126,7 +125,7 @@ export const deleteCouncil = async (token, councilId) => {
 
 // 📝 Chấm điểm hội đồng
 export const submitScore = async (token, councilId, score, comment) => {
-  const response = await fetch(`${API_URL}/council/score`, {
+  const response = await fetch(`${import.meta.env.VITE_API_URL}/council/score`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -145,7 +144,7 @@ export const submitScore = async (token, councilId, score, comment) => {
 
 // 📚 Lấy danh sách hội đồng công khai
 export const getCouncilPublicList = async (token) => {
-  const response = await fetch(`${API_URL}/council/public-list`, {
+  const response = await fetch(`${import.meta.env.VITE_API_URL}/council/public-list`, {
     headers: { Authorization: `Bearer ${token}` },
   });
   if (!response.ok) {
@@ -157,7 +156,7 @@ export const getCouncilPublicList = async (token) => {
 
 // 📥 Tải file báo cáo
 export const downloadReport = async (token, reportId) => {
-  const response = await fetch(`${API_URL}/council/report/${reportId}/download`, {
+  const response = await fetch(`${import.meta.env.VITE_API_URL}/council/report/${reportId}/download`, {
     headers: { Authorization: `Bearer ${token}` },
   });
   if (!response.ok) {
@@ -170,7 +169,7 @@ export const downloadReport = async (token, reportId) => {
 
 // 📋 Lấy danh sách yêu cầu tạo hội đồng
 export const getPendingCouncilRequests = async (token) => {
-  const response = await fetch(`${API_URL}/council/pending-requests`, {
+  const response = await fetch(`${import.meta.env.VITE_API_URL}/council/pending-requests`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -188,7 +187,7 @@ export const getPendingCouncilRequests = async (token) => {
 
 // ✅ Phê duyệt yêu cầu tạo hội đồng
 export const approveCouncilRequest = async (token, requestId) => {
-  const response = await fetch(`${API_URL}/council/uniadmin-approve-request`, {
+  const response = await fetch(`${import.meta.env.VITE_API_URL}/council/uniadmin-approve-request`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -207,7 +206,7 @@ export const approveCouncilRequest = async (token, requestId) => {
 
 // ❌ Từ chối yêu cầu tạo hội đồng
 export const rejectCouncilRequest = async (token, requestId, reason) => {
-  const response = await fetch(`${API_URL}/council/uniadmin-reject-request`, {
+  const response = await fetch(`${import.meta.env.VITE_API_URL}/council/uniadmin-reject-request`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -226,7 +225,7 @@ export const rejectCouncilRequest = async (token, requestId, reason) => {
 
 // 📄 Tải tài liệu phê duyệt
 export const downloadApprovalDocument = async (token, councilId) => {
-  const response = await fetch(`${API_URL}/council/approval-document/${councilId}`, {
+  const response = await fetch(`${import.meta.env.VITE_API_URL}/council/approval-document/${councilId}`, {
     headers: { Authorization: `Bearer ${token}` },
   });
 

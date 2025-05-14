@@ -1,10 +1,8 @@
 // src/services/addashboardService.js
 
-const API_URL = "http://localhost:5000/api";
-
 // Lấy dữ liệu tổng quan cho dashboard admin
 export const fetchAdminDashboardOverview = async (token) => {
-  const response = await fetch(`${API_URL}/addashboard/overview`, {
+  const response = await fetch(`${import.meta.env.VITE_API_URL}/addashboard/overview`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",

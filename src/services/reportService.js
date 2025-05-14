@@ -1,6 +1,5 @@
 //frontend/src/services/reportService.js
 
-const API_URL = "http://localhost:5000/api";
 
 // 📥 Nộp báo cáo
 export const submitReport = async (token, formData, topicId, reportContent, period) => {
@@ -9,7 +8,7 @@ export const submitReport = async (token, formData, topicId, reportContent, peri
         formData.append("reportContent", reportContent);
         formData.append("period", period);
 
-        const response = await fetch(`${API_URL}/report/submit`, {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/report/submit`, {
             method: "POST",
             headers: {
                 Authorization: `Bearer ${token}`,
@@ -33,7 +32,7 @@ export const submitReport = async (token, formData, topicId, reportContent, peri
 // 📄 Lấy danh sách báo cáo
 export const getReportList = async (token) => {
     try {
-        const response = await fetch(`${API_URL}/report/list`, {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/report/list`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -60,7 +59,7 @@ export const updateReport = async (token, formData, reportId, reportContent) => 
         formData.append("reportId", reportId);
         formData.append("reportContent", reportContent);
 
-        const response = await fetch(`${API_URL}/report/update-report`, {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/report/update-report`, {
             method: "PUT",
             headers: {
                 Authorization: `Bearer ${token}`,
@@ -84,7 +83,7 @@ export const updateReport = async (token, formData, reportId, reportContent) => 
 // 🗑️ Xóa báo cáo
 export const deleteReport = async (token, reportId) => {
     try {
-        const response = await fetch(`${API_URL}/report/delete-report`, {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/report/delete-report`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json",
@@ -109,7 +108,7 @@ export const deleteReport = async (token, reportId) => {
 // ✅ Phê duyệt báo cáo (teacher)
 export const approveReport = async (token, reportId) => {
     try {
-        const response = await fetch(`${API_URL}/report/approve-report`, {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/report/approve-report`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -134,7 +133,7 @@ export const approveReport = async (token, reportId) => {
 // ❌ Từ chối báo cáo (teacher)
 export const rejectReport = async (token, reportId) => {
     try {
-        const response = await fetch(`${API_URL}/report/reject-report`, {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/report/reject-report`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -159,7 +158,7 @@ export const rejectReport = async (token, reportId) => {
 // 🔄 Khôi phục báo cáo
 export const restoreReport = async (token, reportId) => {
     try {
-        const response = await fetch(`${API_URL}/report/restore-report`, {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/report/restore-report`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -184,7 +183,7 @@ export const restoreReport = async (token, reportId) => {
 // 🗑️ Lấy danh sách báo cáo đã xóa
 export const getDeletedReports = async (token) => {
     try {
-        const response = await fetch(`${API_URL}/report/deleted-reports`, {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/report/deleted-reports`, {
             method: "GET",
             headers: {
                 Authorization: `Bearer ${token}`,
@@ -207,7 +206,7 @@ export const getDeletedReports = async (token) => {
 // 🗒️ Lấy đề tài approved
 export const getMyTopic = async (token) => {
     try {
-        const response = await fetch(`${API_URL}/topic/list`, {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/topic/list`, {
             method: "GET",
             headers: {
                 Authorization: `Bearer ${token}`,
@@ -247,7 +246,7 @@ export const getMyTopic = async (token) => {
 // Nộp tất cả báo cáo đã phê duyệt của một đề tài cho admin
 export const submitReportsToAdmin = async (token, topicId) => {
     try {
-      const response = await fetch(`${API_URL}/report/submit-to-admin`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/report/submit-to-admin`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -271,7 +270,7 @@ export const submitReportsToAdmin = async (token, topicId) => {
 
 export const createEvaluationPanel = async (token, topicId, members) => {
     try {
-      const response = await fetch(`${API_URL}/evaluation-panel/create`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/evaluation-panel/create`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,
